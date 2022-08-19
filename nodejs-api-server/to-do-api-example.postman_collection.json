@@ -1,0 +1,71 @@
+{
+	"variables": [],
+	"info": {
+		"name": "to-do-api-example",
+		"_postman_id": "6156d107-cfa1-0418-0df8-969eee70d574",
+		"description": "These are some HTTP requests to use to play with the To Do API example",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get all To Dos ",
+			"request": {
+				"url": "localhost:9000/todo",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Create a To Do",
+			"request": {
+				"url": "localhost:9000/todo",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"title\": \"Go to the bank\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Update a To Do",
+			"request": {
+				"url": "localhost:9000/todo/0",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"title\": \"Go to the bar instead\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

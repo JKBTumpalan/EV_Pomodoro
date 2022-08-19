@@ -1,0 +1,25 @@
+version: "3"
+services:
+  db:
+    image: postgres:10.4-alpine
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=postgres
+    volumes:
+      - ./postgres-db/data/000_SEED.sql:/docker-entrypoint-initdb.d/docker_postgres_init.sql
+  server:
+    build: ./nodejs-api-server
+    ports:
+      - "9000:9000"
+    depends_on:
+      - db
+  pomodoro-app:
+    build: ./pomodoro-app
+    ports:
+      - "3000:3000"
+    depends_on:
+      - server

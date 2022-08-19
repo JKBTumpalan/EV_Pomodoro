@@ -1,0 +1,19 @@
+{
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.15.3",
+    "knex": "^0.95.7",
+    "pg": "^8.6.0"
+  },
+  "devDependencies": {
+    "mocha": "^3.4.2",
+    "sinon": "^2.3.8"
+  },
+  "scripts": {
+    "migrate": "npx knex migrate:latest --knexfile ./config/knexfile.js",
+    "start": "node main.js",
+    "test": "mocha -R spec config/*.spec.js routers/*.spec.js services/*.spec.js controllers/*.spec.js"
+  }
+}
